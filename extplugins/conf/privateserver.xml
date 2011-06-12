@@ -1,0 +1,23 @@
+<configuration plugin="privateserver">
+	<settings name="settings">
+
+		<!-- This plugin checks if either of the four conditions below is met, one is enough -->
+
+		<!-- At what level is a player allowed to connect (0 disables levelchecking) -->
+		<set name="allowedlevel">2</set>
+		<!-- Guidsfile and Ipsfile as mentioned below MUST exist! -->
+		<!-- Path and name of the file containing the allowable guids - 1 guid per line -->
+		<set name="guidsfile">@b3/extplugins/conf/guids.txt</set>
+		<!-- Path and name of the file containing the allowable ips - 1 ip per line -->
+		<set name="ipsfile">@b3/extplugins/conf/ips.txt</set>
+		<!-- Minimum XLRstats Skill for a player allowed to connect (0 disables skillchecking) -->
+		<set name="minskill">0</set>
+
+		<!-- Message to send to players who will be kicked -->
+		<set name="kickmessage">$player, You are not allowed to play, prepare to leave the arena.</set>
+
+		<!-- How many seconds to wait between the message and the kick -->
+		<set name="kickdelay">5</set>
+
+	</settings>
+</configuration>
