@@ -209,7 +209,7 @@ class PrivateserverPlugin(b3.plugin.Plugin):
 
     def loadFromFile(self, fileName, _subj='guids'):
         if not os.path.isfile(fileName):
-            self.error('%s file %s does not exist, disabling plugin!', %( _subj, fileName))
+            self.error('%s file %s does not exist, disabling plugin!' %( _subj, fileName))
             self.disable()
             return False
 
