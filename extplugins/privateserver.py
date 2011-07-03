@@ -83,7 +83,7 @@ class PrivateserverPlugin(b3.plugin.Plugin):
                 func = self.getCmd(cmd)
                 if func:
                     self._adminPlugin.registerCommand(self, cmd, level, func, alias)
-        self._adminPlugin.registerCommand(self, 'psversion', 0, self.cmd_grversion, 'psver')
+        self._adminPlugin.registerCommand(self, 'psversion', 0, self.cmd_psversion, 'psver')
 
         # Register our events
         self.verbose('Registering events')
