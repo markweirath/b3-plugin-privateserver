@@ -59,7 +59,6 @@ class PrivateserverPlugin(b3.plugin.Plugin):
         if not self._xlrstatsPlugin:
             self.info('Could not find xlrstats plugin... Skillbased restriction is OFF.')
             self._skillBased = False
-            return False
         else:
             self.verbose('Found XLRstats plugin, continueing...')
             try:
@@ -177,21 +176,21 @@ class PrivateserverPlugin(b3.plugin.Plugin):
             # checking level
             if client.maxLevel >= self._allowedLevel and self._allowedLevel != 0:
                 _allowed = True
-                self.verbose2('Level %s (%s) allowed' %(client.name, client.maxLevel) )
+                self.verbose('Level %s (%s) allowed' %(client.name, client.maxLevel) )
             # checking Guid
             if str(client.guid) in self._guids:
                 _allowed = True 
-                self.verbose2('Found %s (%s) in Guid list' %(client.name, client.guid) )
+                self.verbose('Found %s (%s) in Guid list' %(client.name, client.guid) )
             # checking IP
             if str(client.ip) in self._ips:
                 _allowed = True
-                self.verbose2('Found %s (%s) in IP list' %(client.name, client.ip) )
+                self.verbose('Found %s (%s) in IP list' %(client.name, client.ip) )
             # checking Skill  
             if self._skillBased:
                 playerStats = self._xlrstatsPlugin.get_PlayerStats(client)
                 if playerStats.skill >= self._minSkill:
                     _allowed = True 
-                    self.verbose2('Skill %s (%s) sufficient to play' %(client.name, playerStats.skill) )
+                    self.verbose('Skill %s (%s) sufficient to play' %(client.name, playerStats.skill) )
 
             if _allowed == False:
                 self.debug('%s is not allowed to play, sending message.' % client.name)
